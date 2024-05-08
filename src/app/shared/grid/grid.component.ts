@@ -42,17 +42,40 @@ export class GridComponent {
       name: 'widget4',
       items: ['item4-1', 'item4-2', 'item4-3'],
     },
+    {
+      id: 5,
+      type: 'widget',
+      name: 'widget5',
+      items: ['item5-1', 'item5-2', 'item5-3'],
+    },
+    {
+      id: 6,
+      type: 'widget',
+      name: 'widget6',
+      items: ['item6-1', 'item6-2', 'item6-3'],
+    },
+    {
+      id: 7,
+      type: 'widget',
+      name: 'widget7',
+      items: ['item7-1', 'item7-2', 'item7-3'],
+    },
   ];
   letSubDrag = true;
 
   handleDragStart(event: CdkDragStart): void {
     this.letSubDrag = false;
+    this.letSubDrag = true;
   }
   handleDragEnd(event: CdkDragEnd): void {
     this.letSubDrag = true;
   }
 
-  drop(event: CdkDragDrop<any>) {
+  widgetTrackBy(widget: any) {
+    return widget.id;
+  }
+
+  drop(event: CdkDragDrop<any[]>) {
     console.log('grid prev:' + event.previousIndex);
     console.log('grid current: ' + event.currentIndex);
     moveItemInArray(this.widgets, event.previousIndex, event.currentIndex);

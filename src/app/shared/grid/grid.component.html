@@ -1,11 +1,14 @@
 <div
-  class="p-2 border-brand-8 border-[3px] flex gap-2 example-list widgets"
+  class="p-2 border-brand-8 border-[3px] flex flex-wrap gap-2 example-list widgets"
   cdkDropList
+  [cdkDropListOrientation]="'horizontal'"
   (cdkDropListDropped)="drop($event)"
 >
-  <ng-container *ngFor="let widget of widgets; index as i">
+  <ng-container
+    *ngFor="let widget of widgets; index as i; trackBy: widgetTrackBy"
+  >
+    <!-- cdkDragBoundary=".widgets" -->
     <app-widget
-      cdkDragBoundary=".widgets"
       cdkDrag
       [enableDrag]="letSubDrag"
       [widget]="widget"

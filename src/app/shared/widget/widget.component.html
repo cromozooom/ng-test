@@ -7,9 +7,9 @@
     <h3>{{ widget.name | json }} {{ enableDrag | json }}</h3>
     <ng-container *ngFor="let item of widget.items; index as i">
       <app-item
+        [item]="item"
         cdkDragBoundary=".widget"
         cdkDrag
-        [item]="item"
         class="example-box"
       ></app-item>
     </ng-container>
@@ -22,7 +22,8 @@
   >
     <h3>{{ widget.name | json }} {{ enableDrag | json }}</h3>
     <ng-container *ngFor="let item of widget.items; index as i">
-      <app-item cdkDrag [item]="item" class="font-bold"></app-item>
+      <!-- cdkDrag -->
+      <app-item [item]="item" class="font-bold"></app-item>
     </ng-container>
   </div>
 </ng-container>
