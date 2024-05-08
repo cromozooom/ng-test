@@ -1,0 +1,28 @@
+<ng-container *ngIf="enableDrag">
+  <div
+    cdkDropList
+    (cdkDropListDropped)="drop($event)"
+    class="p-2 flex flex-col gap-2 border-accent-8 border-[3px] example-list widget"
+  >
+    <h3>{{ widget.name | json }} {{ enableDrag | json }}</h3>
+    <ng-container *ngFor="let item of widget.items; index as i">
+      <app-item
+        cdkDragBoundary=".widget"
+        cdkDrag
+        [item]="item"
+        class="example-box"
+      ></app-item>
+    </ng-container>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!enableDrag">
+  <div
+    class="p-2 flex flex-col gap-2 border-brand-10 border-[3px] example-list widget"
+  >
+    <h3>{{ widget.name | json }} {{ enableDrag | json }}</h3>
+    <ng-container *ngFor="let item of widget.items; index as i">
+      <app-item cdkDrag [item]="item" class="font-bold"></app-item>
+    </ng-container>
+  </div>
+</ng-container>

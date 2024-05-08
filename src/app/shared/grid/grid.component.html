@@ -1,0 +1,18 @@
+<div
+  class="p-2 border-brand-8 border-[3px] flex gap-2 example-list widgets"
+  cdkDropList
+  (cdkDropListDropped)="drop($event)"
+>
+  <ng-container *ngFor="let widget of widgets; index as i">
+    <app-widget
+      cdkDragBoundary=".widgets"
+      cdkDrag
+      [enableDrag]="letSubDrag"
+      [widget]="widget"
+      class="example-box"
+      (cdkDragStarted)="handleDragStart($event)"
+      (cdkDragEnded)="handleDragEnd($event)"
+    >
+    </app-widget>
+  </ng-container>
+</div>
