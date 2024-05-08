@@ -1,3 +1,7 @@
+# Drag&Drop
+
+https://stackblitz.com/edit/angular-cdk-mixed-orientation-drag-drop-5xouoe?file=src%2Fapp%2Fapp.component.html&file=src%2Fapp%2Fapp.component.ts,src%2Fapp%2Fapp.module.ts
+
 # NgTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
