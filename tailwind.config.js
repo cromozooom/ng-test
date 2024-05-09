@@ -106,7 +106,6 @@ module.exports = {
         11: "#b4b4b4",
         12: "#eeeeee",
       },
-
       primary: {
         1: "#fbfdff",
         2: "#f4faff",
@@ -191,7 +190,6 @@ module.exports = {
         11: "#3dd68c",
         12: "#b1f1cb",
       },
-
       warning: {
         1: "#fdfdf9",
         2: "#fefce9",
@@ -220,7 +218,6 @@ module.exports = {
         11: "#f5e147",
         12: "#f6eeb4",
       },
-
       danger: {
         1: "#fffcfc",
         2: "#fff7f7",
