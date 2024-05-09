@@ -2,9 +2,10 @@
   <div
     cdkDropList
     (cdkDropListDropped)="drop($event)"
-    class="p-2 flex flex-col gap-2 border-accent-8 border-[3px] example-list widget"
+    [class]="'bg-' + widget.name"
+    class="p-2 flex flex-col gap-2 border-accent-8 border-[3px] example-list widget w-full"
   >
-    <h3>{{ widget.name | json }} {{ enableDrag | json }}</h3>
+    <strong class="font-bold">{{ widget.name }}</strong>
     <ng-container *ngFor="let item of widget.items; index as i">
       <app-item
         [item]="item"
@@ -18,12 +19,13 @@
 
 <ng-container *ngIf="!enableDrag">
   <div
-    class="p-2 flex flex-col gap-2 border-brand-10 border-[3px] example-list widget"
+    [class]="'bg-' + widget.name"
+    class="p-2 flex flex-col gap-2 border-brand-10 border-[3px] min-w-[30rem] example-list widget"
   >
-    <h3>{{ widget.name | json }} {{ enableDrag | json }}</h3>
+    <strong class=""> {{ widget.name }}</strong>
     <ng-container *ngFor="let item of widget.items; index as i">
       <!-- cdkDrag -->
-      <app-item [item]="item" class="font-bold"></app-item>
+      <app-item [item]="item"></app-item>
     </ng-container>
   </div>
 </ng-container>
